@@ -1,0 +1,12 @@
+<carnet>
+   <note>
+     <titre>A faire</titre>
+     <ligne>Ecrire un verificateur de XML</ligne>
+     <ligne>Vérifier les fuites mémores</ligne>
+   </note>
+   <note>
+      <titre>Infos pratiques</titre>
+      <ligne>M-x compile, puis "make"
+             permet de compiler dans Emacs</ligne>
+   </note>
+</carnet>
