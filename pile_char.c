@@ -7,13 +7,23 @@ int estPileVide ( Pile p ){
 	return p==NULL;
 }
 
-void empile ( Pile * p , char* data ){
+void empile ( Pile * p , char* data){
 	Elem_pile* new = malloc(sizeof(Elem_pile));
 	new->data=data;
 	new->precedent=*p;
 
 	*p=new;
 }
+
+void empile2( Pile * p , char* data, int noeud){
+	Elem_pile* new = malloc(sizeof(Elem_pile));
+	new->data=data;
+	new->noeud=noeud;
+	new->precedent=*p;
+
+	*p=new;
+}
+
 
 char* depile ( Pile * p ){
 
@@ -35,6 +45,15 @@ char* tetePile ( Pile p ){
 	}
 
 	return p->data;
+}
+
+
+int tetePile2 ( Pile p ){
+	if(p==NULL){
+		return -1;
+	}
+
+	return p->noeud;
 }
 
 void affichePile ( Pile  p ){

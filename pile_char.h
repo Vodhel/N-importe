@@ -3,6 +3,7 @@
 
 typedef struct e_pile
 {
+  int noeud;
   char * data ;
   struct e_pile * precedent ;
 } Elem_pile ;
@@ -15,7 +16,7 @@ int estPileVide ( Pile p ) ;
 
 /* Ajoute l'element donn' en tete de la pile */
 
-void empile ( Pile * p , char* data ) ;
+void empile ( Pile * p , char* data) ;
 
 /* Supprime le premier element de la pile et retourne sa valeur -1 si
    la pile est vide */
@@ -30,5 +31,9 @@ void affichePile ( Pile  p ) ;
 
 /* Libère la mémoire */
 void freePile( Pile p);
+
+//Exo6
+void empile2( Pile * p , char* data, int noeud);
+int tetePile2 ( Pile p );
 
 # endif

@@ -1,0 +1,27 @@
+digraph {
+	 0 [label="experience"];
+	 1 [label="debut"];
+	 0 -> 1
+	 2 [label="nom"];
+	 0 -> 2
+	 3 [label="experience"];
+	 4 [label="debut"];
+	 3 -> 4
+	 5 [label="nom"];
+	 3 -> 5
+	 6 [label="experience"];
+	 7 [label="debut"];
+	 6 -> 7
+	 8 [label="nom"];
+	 6 -> 8
+	 9 [label="experience"];
+	 10 [label="debut"];
+	 9 -> 10
+	 11 [label="nom"];
+	 9 -> 11
+	 12 [label="experience"];
+	 13 [label="debut"];
+	 12 -> 13
+	 14 [label="nom"];
+	 12 -> 14
+}
