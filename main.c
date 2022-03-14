@@ -120,12 +120,12 @@ int main(int argc, char * argv[])
   //Exercice 3: Question3 : affiche les balises du fichier xml uniquement
 
   //checkXML(argv[1]);
-  //completeSchedule(argv[1]);
+  completeSchedule(argv[1]);
+	
 
-
-  FILE* stdout=fopen("experience.dot","r+");
-  drawGraph(argv[1],stdout);
-  fclose(stdout);
+  //FILE* stdout=fopen("experience.dot","r+");
+  //drawGraph(argv[1],stdout);
+  //fclose(stdout);
 
   //Exo6:
   //Commande tape : ./xmlChecker fichiers_xml/petit.xml | dot -Tpdf > petit.pdf petit.dot

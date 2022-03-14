@@ -1,4 +1,5 @@
 #include "schedule.h"
+#include "experiment.h"
 
 QueueS* scheduleStart(char* filename)
 {
@@ -44,4 +45,41 @@ QueueS* scheduleStart(char* filename)
   return q;
 }
 
+void completeSchedule(char * filename) 
+{
+	struct_t* Elem;
+	QueueS* fileTemp = creerFileStruct();
+	QueueS* file = scheduleStart(filename);
+	
+	afficheFileStruct(*file, afficheExperiment); 
+  
+	Elem = defileStruct(file);
+	printf("début %s", Elem->name); 
+	enfileStruct(fileTemp, Elem);		//On initialise fileTemp et affiche le premier message de début
+	
+	while (file != NULL)			//Tant que file n'est pas vide
+	{
+		
+		if(fileTemp->debut->data->time + 90 > file->debut->data->time) //Si l'élément de file commence avant que ne termine celui de file temp...
+		{
+			Elem = defileStruct(file);			//On affiche son début et l'enfile à fileTemp
+			enfileStruct(fileTemp, Elem);
+		}
+		else							//Sinon...
+		{
+			Elem = defileStruct(fileTemp);			//On defile fileTemp, on affiche la fin de cet element et on defile
+			printf("fin %s", Elem->name);			//l'element de file pour l'enfiler a file temp
+			Elem = defileStruct(file);
+			enfileStruct(fileTemp, Elem);
+		}		
+	}
+	while(fileTemp)							//Enfin une fois file vidé, on vide fileTemp en affichant toute les fins
+	{
+		Elem = defileStruct(fileTemp);
+		printf("fin %s", Elem->name);
+	}
+	
+	free(Elem);
+	
+}
 
